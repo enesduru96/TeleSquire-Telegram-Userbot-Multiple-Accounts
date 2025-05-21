@@ -1,0 +1,19 @@
+{
+  "app_name": "SessionCreator",
+  "debug": true,
+  "database": {
+    "url": "sqlite+aiosqlite:///data/database.db",
+    "user": "admin",
+    "password": "secret"
+  },
+  "logging": {
+    "log_file_database": "logs/database.log",
+    "log_file_main": "logs/main.log",
+    "log_file_functions": "logs/functions.log",
+    "log_file_client": "logs/client.log",
+    "log_level": "DEBUG"
+  },
+  "tg_api_id": 2040,
+  "tg_api_hash": "b18441a1ff607e10a989891a5462e627",
+  "proxy_type": 2
+}

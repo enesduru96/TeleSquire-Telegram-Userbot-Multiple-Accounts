@@ -1,0 +1,38 @@
+{
+    "main_order": 1,
+    "pc": {
+        "system_versions_order": 1,
+        "system_versions": [
+            "Windows 10 x64",
+            "Windows 11 x64"
+        ],
+        "app_version": "5.8.1 x64",
+        "devices_order": 7,
+        "devices": [
+            "A520M",
+            "A520M S2H",
+            "A320M-A",
+            "B450",
+            "B450M",
+            "B550",
+            "B550M S2H",
+            "B650",
+            "B650M",
+            "B650E-E",
+            "B660M",
+            "B660-A",
+            "B760 DS3H",
+            "B760M",
+            "H510M-B",
+            "Z690",
+            "Z790-A",
+            "Z790-F",
+            "Z790-H",
+            "Z790-S",
+            "Z790",
+            "Z790 ACE",
+            "MS-7D89",
+            "G513IH-HN084TS"
+        ]
+    }
+}
