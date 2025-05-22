@@ -49,7 +49,6 @@ class ProxyHandler:
                         print("Phone number does not match any country prefix.")
                         return None
 
-                    # Check unused proxies
                     unused_proxies = await session.execute(
                         select(FilteredProxy).outerjoin(
                             ProxyUseCounter, FilteredProxy.proxy == ProxyUseCounter.proxy
@@ -62,7 +61,6 @@ class ProxyHandler:
                         await self.update_proxy_use_counter(selected_proxy.proxy)
                         return selected_proxy.proxy
 
-                    # Check least used proxy
                     least_used_proxy = await session.execute(
                         select(FilteredProxy, ProxyUseCounter.used_times).outerjoin(
                             ProxyUseCounter, FilteredProxy.proxy == ProxyUseCounter.proxy

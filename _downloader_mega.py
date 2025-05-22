@@ -13,7 +13,7 @@ target_dir = 'sessions/_seller_sessions'
 os.makedirs(download_dir, exist_ok=True)
 
 mega_link_pattern = re.compile(r'(https://mega.nz/[^\s]+)')
-mega_get_path = r"C:\\Users\\cool\\AppData\\Local\\MEGAcmd\\mega-get.bat"
+mega_get_path = r"path\\to\\mega\\mega-get.bat"
 
 key_mapping = {
     "session_file": "session",
@@ -90,16 +90,14 @@ def main(links_file, mega_get_path, download_dir):
                 download_file_sync(mega_get_path, file_url, download_dir)
 
     for file_name in os.listdir(download_dir):
-        if file_name.endswith(('.zip', '.rar')):  # Hem zip hem rar dosyalarını kontrol et
+        if file_name.endswith(('.zip', '.rar')):
             archive_path = os.path.join(download_dir, file_name)
             base_name = os.path.splitext(file_name)[0]
 
-            # Zip dosyaları için
             if file_name.endswith('.zip'):
                 with zipfile.ZipFile(archive_path, 'r') as archive_ref:
                     process_archive(archive_ref, base_name)
 
-            # Rar dosyaları için
             elif file_name.endswith('.rar'):
                 with rarfile.RarFile(archive_path, 'r') as archive_ref:
                     process_archive(archive_ref, base_name)

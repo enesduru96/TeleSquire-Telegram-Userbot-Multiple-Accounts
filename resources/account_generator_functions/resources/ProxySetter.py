@@ -44,7 +44,7 @@ class ProxifierSetter:
             username_element = ET.SubElement(auth_element, "Username")
             username_element.text = user
             password_element = ET.SubElement(auth_element, "Password")
-            password_element.text = encrypted_password  # Şifrelenmiş sabit şifre
+            password_element.text = encrypted_password
 
             options_element = ET.SubElement(proxy_element, "Options")
             options_element.text = "48"

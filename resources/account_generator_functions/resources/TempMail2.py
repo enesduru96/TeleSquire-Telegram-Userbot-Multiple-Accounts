@@ -27,7 +27,7 @@ class TempMailAPI:
         domains = self.get_domains()
         if domains:
             local_part = "temp" + str(hashlib.md5().hexdigest()[:6])
-            email = f"{local_part}@{domains[0]}"  # İlk domaini kullanıyoruz
+            email = f"{local_part}@{domains[0]}"
             print(f"Generated temp email: {email}")
             return email
         else:
@@ -62,16 +62,3 @@ class TempMailAPI:
         else:
             raise Exception("Failed to retrieve email content")
 
-
-# Example use
-# if __name__ == "__main__":
-#     temp_mail = TempMailAPI()
-#     print("Temporary Email Address:", temp_mail.get_email_address())
-
-#     # Gelen kutusunu kontrol et
-#     inbox = temp_mail.check_inbox()
-#     if inbox:
-#         for message in inbox:
-#             print("From:", message['mail_from'], "Subject:", message['mail_subject'])
-#             content = temp_mail.get_email_content(message['mail_id'])
-#             print("Content:", content['mail_text'])

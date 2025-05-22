@@ -2,7 +2,7 @@ import asyncio
 import json
 import os
 
-# Cihaz listesi
+
 devices = {
     "Honor": [
         "BVL-AN16",
@@ -193,7 +193,6 @@ class DeviceManager:
         print("Updated Device Information:")
         await self.get_device_identity()
 
-        # Save progress
         if current_model_index + 1 < len(self.devices[manufacturer]):
             self.save_progress(manufacturer, current_model_index + 1)
         else:
@@ -232,7 +231,6 @@ class DeviceManager:
         proxy = self.proxies[current_order]
         print(f"Setting proxy: {proxy}")
 
-        # Use ADB to apply proxy settings
         cmd = f"adb -s {self.device_serial} shell settings put global http_proxy {proxy}"
         stdout, stderr = await self.run_command(cmd)
         if stderr:

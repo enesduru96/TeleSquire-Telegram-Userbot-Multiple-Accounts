@@ -340,7 +340,7 @@ class ClientSelfHandler:
                 if me.photo:
                     photo_folder = Path("_files/profile_pictures")
                     profile_photo_path = photo_folder / f"{me.id}.jpg"
-                    profile_photo_path = profile_photo_path.as_posix()  # Yol her zaman '/' kullanır
+                    profile_photo_path = profile_photo_path.as_posix()
                     photo_path = await self.client.download_profile_photo(me, file=profile_photo_path)
                 else:
                     photo_path = None

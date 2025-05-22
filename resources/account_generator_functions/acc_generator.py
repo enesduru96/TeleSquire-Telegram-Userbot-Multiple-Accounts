@@ -17,7 +17,6 @@ device_configs = [
 class AccGenerator:
     def __init__(self, config):
         self.FileHandler = FileHandler("")
-        # self.proxy_setter = ProxySetter()
         self.device_config = config
         self.apk_path = "resources/account_generator_functions/resources/Telegram.apk"
         self.package_name = "org.telegram.messenger.web"
@@ -359,11 +358,6 @@ class AccGenerator:
 
             time.sleep(1)
             self.controller.click_text("Deny")
-
-            #Send new session request to the number
-
-
-            #Click on telegram and print source to get login code, then you are free to go with telethon.
 
 
         except:

@@ -82,7 +82,6 @@ class MainMenu:
 
     async def main_menu(self):
         while True:
-            # os.system('CLS')
             print("\nMain Menu:\n")
             print("[1] - Account Management")
             print("[2] - Proxy and Connection Settings")
@@ -472,13 +471,11 @@ class MainMenu:
 
         session_list = self.FileHandler.get_session_list()
 
-        # Profil bilgilerini değiştirmek için görevleri oluştur
         tasks = [
             asyncio.create_task((await MyClient.create(phone)).change_profile_info(change_basic, change_username, change_photo))
             for phone in session_list
         ]
 
-        # Tüm görevleri eşzamanlı çalıştır
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         dict_tasks = []
@@ -495,7 +492,6 @@ class MainMenu:
             elif isinstance(result, Exception):
                 print(f"Task error: {result}")
 
-        # Ek görevleri de eşzamanlı olarak çalıştır
         await asyncio.gather(*dict_tasks)
 
         input("  » ")
